@@ -3,6 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const paymentRoutes = require("./routes/payment.routes");
+const orderRoutes = require("./routes/order.routes");
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/payment", paymentRoutes);
+app.use("/api/order", orderRoutes);
 
 app.get("/", (req, res) => {
   res.send("Paystack backend running...");
